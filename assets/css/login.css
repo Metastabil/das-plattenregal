@@ -1,0 +1,88 @@
+@import 'ui-library.css';
+@import 'variables.css';
+@import 'buttons.css';
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik.ttf') format('truetype');
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    background-color: var(--background);
+}
+
+.left-aside {
+    background-color: var(--dark-grey);
+    position: fixed;
+    padding: 25px;
+    height: 100vh;
+    width: 400px;
+}
+
+.logo-container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 0 50px 0;
+    display: flex;
+}
+
+.logo-container svg {
+    filter: drop-shadow(0 0 10px var(--black));
+    color: var(--dark-blue);
+    font-size: 100px;
+}
+
+.logo-container h1 {
+    filter: drop-shadow(0 0 10px var(--black));
+    color: var(--dark-blue);
+    margin: 0 0 0 10px;
+}
+
+.login-form {
+    margin: 50% 0 0 0;
+    width: 100%;
+}
+
+.login-form .input-wrapper {
+    margin: 0 0 25px 0;
+    width: 100%;
+}
+
+.login-form .input-wrapper label {
+    color: var(--white);
+    margin: 0 0 5px 0;
+    display: block;
+}
+
+.login-form .input-wrapper label .required {
+    color: var(--dark-red) !important;
+    cursor: help;
+}
+
+.login-form .input-wrapper input {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+    border: none;
+    width: 100%;
+}
+
+main {
+    background: url('../images/background.jpg') no-repeat fixed center center;
+    width: calc(100% - 400px);
+    background-size: cover;
+    margin: 0 0 0 400px;
+    height: 100%;
+}

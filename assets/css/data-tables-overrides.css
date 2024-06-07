@@ -1,0 +1,10 @@
+.dt-search label {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    color: var(--white);
+}
+
+.dt-search input {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    color: var(--white) !important;
+    outline: none;
+}

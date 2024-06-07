@@ -1,0 +1,84 @@
+.btn {
+    font: 400 normal 18px 'Rubik', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--black);
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:active {
+    position: relative;
+    top: 1px;
+}
+.btn-centered {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.btn-blue {
+    background: linear-gradient(to bottom, var(--light-blue) 5%, var(--dark-blue) 100%);
+    text-shadow: 1px 1px var(--dark-blue);
+    color: var(--black);
+    position: relative;
+    padding: 8px 16px;
+    z-index: 1;
+}
+
+.btn-blue:after {
+    background: linear-gradient(to bottom, var(--dark-blue) 5%, var(--light-blue) 100%);
+    transition: opacity .5s;
+    position: absolute;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    content: '';
+    z-index: 2;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+.btn-blue:hover:after {
+    opacity: 1;
+}
+
+.btn-blue span {
+    position: relative;
+    z-index: 3;
+}
+
+.btn-red {
+    background: linear-gradient(to bottom, var(--light-red) 5%, var(--dark-red) 100%);
+    text-shadow: 1px 1px var(--dark-red);
+    color: var(--black);
+    position: relative;
+    padding: 8px 16px;
+    z-index: 1;
+}
+
+.btn-red:after {
+    background: linear-gradient(to bottom, var(--dark-red) 5%, var(--light-red) 100%);
+    transition: opacity .5s;
+    position: absolute;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    content: '';
+    z-index: 2;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+.btn-red:hover:after {
+    opacity: 1;
+}
+
+.btn-red span {
+    position: relative;
+    z-index: 3;
+}
