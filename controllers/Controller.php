@@ -4,7 +4,7 @@ namespace KPO\Controllers;
 use KPO\System\Classes\View;
 
 /**
- * @author Julius Derigs <derigs@kutzner-beratung.com>
+ * @author Julius Derigs <info@das-plattenregal.de>
  * @version 1.0
  */
 

@@ -5,7 +5,7 @@ use JetBrains\PhpStorm\NoReturn;
 use KPO\Models\UserModel;
 
 /**
- * @author Julius Derigs <derigs@kutzner-beratung.com>
+ * @author Julius Derigs <info@das-plattenregal.de>
  * @version 1.0
  */
 
