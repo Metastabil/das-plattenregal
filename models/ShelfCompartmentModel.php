@@ -50,6 +50,8 @@ class ShelfCompartmentModel extends Model {
             $sql .= ' WHERE ' . implode(' AND ', $conditions);
         }
 
+        $sql .= ' ORDER BY id ASC';
+
         $statement = $this->db->prepare($sql);
         $statement->execute($params);
         $result = $statement->fetchAll();

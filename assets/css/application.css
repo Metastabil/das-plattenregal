@@ -2,6 +2,7 @@
 @import 'ui-library.css';
 @import 'variables.css';
 @import 'buttons.css';
+@import 'shelves.css';
 
 @font-face {
     font-family: 'Rubik';
@@ -83,6 +84,11 @@ main {
     margin: 0 0 25px 0;
 }
 
+.table-title {
+    color: var(--white);
+    margin: 25px 0 15px 0;
+}
+
 .default-form .input-wrapper {
     margin: 0 0 25px 0;
 }
@@ -110,6 +116,13 @@ main {
 
 .default-form .input-wrapper textarea {
     resize: none;
+}
+
+.default-form .input-wrapper input:disabled,
+.default-form .input-wrapper textarea:disabled {
+    background-color: var(--light-grey);
+    cursor: not-allowed;
+    color: var(--black);
 }
 
 .default-table thead th {

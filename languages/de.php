@@ -10,6 +10,8 @@ $lang['undefined']['already_account'] = 'Du hast schon einen Account?';
 $lang['undefined']['required'] = 'Pflichtfeld';
 $lang['undefined']['yes'] = 'Ja';
 $lang['undefined']['no'] = 'Nein';
+$lang['undefined']['table'] = 'Tabelle';
+$lang['undefined']['graphics'] = 'Grafik';
 
 ########################################################################################################################
 # Titles ###############################################################################################################
@@ -154,6 +156,8 @@ $lang['shelves']['attributes']['width'] = 'Breite (in Regalfächern)';
 $lang['shelves']['attributes']['height'] = 'Höhe (in Regalfächern)';
 $lang['shelves']['attributes']['created'] = 'Angelegt am';
 $lang['shelves']['attributes']['updated'] = 'Aktualisiert am';
+
+$lang['shelves']['table_titles']['shelf_compartments'] = 'Regalfächer';
 
 ########################################################################################################################
 # Users ################################################################################################################

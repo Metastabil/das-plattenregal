@@ -1,0 +1,41 @@
+.shelf-compartments-actions-wrapper {
+    margin: 0 0 15px 0;
+}
+
+.shelf-compartments-actions-wrapper a {
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.shelf-compartments-actions-wrapper .active {
+    border-color: var(--light-blue);
+    color: var(--light-blue);
+}
+
+.shelf-compartments-container {
+    display: none;
+}
+
+.graphics {
+    border-spacing: 10px;
+    margin: 0 0 0 -10px;
+}
+
+.graphics td {
+    transition: border-width .3s ease-in-out,
+    scale .3s ease-in-out,
+    box-shadow .3s ease-in-out;
+    border: 1px solid var(--light-blue);
+    color: var(--white);
+    text-align: center;
+    border-radius: 5px;
+    height: 150px;
+    width: 150px;
+}
+
+.graphics td:hover {
+    box-shadow: 0 0 10px var(--light-blue);
+    cursor: pointer;
+    scale: 105%;
+}
+

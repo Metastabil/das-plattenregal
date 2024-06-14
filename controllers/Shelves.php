@@ -82,7 +82,7 @@ class Shelves extends Controller {
                     }
 
                     $shelf_compartment_data = [
-                        'name' => $i,
+                        'name' => 'Regalfach ' . $i,
                         'row' => $shelf_compartment_row,
                         'position' => $shelf_compartment_position,
                         'shelf_id' => $shelf_id,
@@ -109,8 +109,20 @@ class Shelves extends Controller {
                    ->render('templates/footer');
     }
 
+    /**
+     * @param int $id
+     * @return void
+     */
     public function show(int $id) :void {
+        $data = [
+            'title' => esc(LANG['titles']['shelves']['show']),
+            'element' => $this->shelfModel->get($id),
+            'shelf_compartments' => $this->shelfCompartmentModel->get(0, 0, $id)
+        ];
 
+        $this->view->render('templates/header', $data)
+                   ->render('shelves/show', $data)
+                   ->render('templates/footer');
     }
 
     public function edit(int $id) :void {
