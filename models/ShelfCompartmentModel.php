@@ -62,8 +62,8 @@ class ShelfCompartmentModel extends Model {
      * @return bool
      */
     public function create(array $data) :bool {
-        $sql = "INSERT INTO $this->table (name, annotation, row, position, user_id, shelf_id)
-                VALUES (:name, :annotation, :row, :position, :user_id, :shelf_id)";
+        $sql = "INSERT INTO $this->table (name, row, position, user_id, shelf_id)
+                VALUES (:name, :row, :position, :user_id, :shelf_id)";
 
         return $this->db->prepare($sql)->execute($data);
     }

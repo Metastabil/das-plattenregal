@@ -24,6 +24,8 @@
         </script>
     </head>
     <body>
+        <!-- TODO ~> Implement displaying of session messages -->
+
         <aside class="left-aside">
             <div class="logo-container">
                 <i class="fa-solid fa-record-vinyl"></i>
@@ -38,7 +40,7 @@
                     <?= esc(LANG['navigation']['dashboard']) ?>
                 </a>
 
-                <a href="javascript:void(0)" title="<?= esc(LANG['navigation']['shelves']) ?>">
+                <a href="<?= base_url('shelves') ?>" title="<?= esc(LANG['navigation']['shelves']) ?>">
                     <span class="nav-icon">
                         <i class="fa-solid fa-table-cells"></i>
                     </span>
@@ -66,7 +68,7 @@
                     <?= esc(LANG['navigation']['conditions']) ?>
                 </a>
 
-                <a href="javascript:void(0)" title="<?= esc(LANG['navigation']['users']) ?>">
+                <a href="<?= base_url('users') ?>" title="<?= esc(LANG['navigation']['users']) ?>">
                     <span class="nav-icon">
                         <i class="fa-solid fa-users"></i>
                     </span>

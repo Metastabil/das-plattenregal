@@ -90,4 +90,11 @@ class ShelfModel extends Model {
 
         return $this->db->prepare($sql)->execute(['deleted' => 1, 'id' => $id]);
     }
+
+    /**
+     * @return int
+     */
+    public function get_last_inserted_id() :int {
+        return $this->db->query('SELECT LAST_INSERT_ID()')->fetchColumn();
+    }
 }

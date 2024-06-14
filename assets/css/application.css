@@ -98,13 +98,18 @@ main {
     cursor: help;
 }
 
-.default-form .input-wrapper input {
+.default-form .input-wrapper input,
+.default-form .input-wrapper textarea {
     font: 400 normal 18px 'Rubik', sans-serif;
     border-radius: 5px;
     outline: none;
     padding: 10px;
     border: none;
     width: 400px;
+}
+
+.default-form .input-wrapper textarea {
+    resize: none;
 }
 
 .default-table thead th {

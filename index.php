@@ -2,6 +2,7 @@
 session_start();
 
 use KPO\Controllers\Pages;
+use KPO\Controllers\Shelves;
 use KPO\Controllers\Users;
 
 /*
@@ -77,6 +78,32 @@ $routeFound = router('', static function() {
 $routeFound = router('login', static function() {
     $pagesInstance = new Pages();
     $pagesInstance->login();
+}) || $routeFound;
+
+# Shelf related routes
+$routeFound = router('shelves', static function() {
+    $shelvesInstance = new Shelves();
+    $shelvesInstance->index();
+}) || $routeFound;
+
+$routeFound = router('create-shelf', static function() {
+    $shelvesInstance = new Shelves();
+    $shelvesInstance->create();
+}) || $routeFound;
+
+$routeFound = router('show-shelf/:id', static function($id) {
+    $shelvesInstance = new Shelves();
+    $shelvesInstance->show($id);
+}) || $routeFound;
+
+$routeFound = router('edit-shelf/:id', static function($id) {
+    $shelvesInstance = new Shelves();
+    $shelvesInstance->edit($id);
+}) || $routeFound;
+
+$routeFound = router('delete-shelf/:id', static function($id) {
+    $shelvesInstance = new Shelves();
+    $shelvesInstance->delete($id);
 }) || $routeFound;
 
 # User related routes
