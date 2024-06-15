@@ -69,17 +69,20 @@ class Pages extends Controller {
         redirect(base_url('login'));
     }
 
+    public function dashboard() :void {
+        redirect_if_not_authenticated();
+
+
+    }
+
     /**
      * @return void
      */
     public function error_404() :void {
         $data = [
-            'title' => esc(LANG['titles']['pages']['error_404']),
-            'error' => ''
+            'title' => esc(LANG['titles']['pages']['error_404'])
         ];
 
-        $this->view->render('templates/header', $data)
-                   ->render('pages/error_404')
-                   ->render('templates/footer');
+        $this->view->render('pages/error_404', $data);
     }
 }

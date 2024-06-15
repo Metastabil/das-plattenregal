@@ -1,0 +1,6 @@
+.error-404 {
+    color: var(--light-red);
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}

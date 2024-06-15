@@ -3,6 +3,7 @@
 @import 'variables.css';
 @import 'buttons.css';
 @import 'shelves.css';
+@import 'errors.css';
 
 @font-face {
     font-family: 'Rubik';

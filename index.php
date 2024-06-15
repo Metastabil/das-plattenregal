@@ -86,6 +86,10 @@ $routeFound = router('logout', static function() {
     $pagesInstance->logout();
 }) || $routeFound;
 
+$routeFound = router('dashboard', static function() {
+    $pagesInstance = new Pages();
+    $pagesInstance->dashboard();
+}) || $routeFound;
 
 # Format related routes
 $routeFound = router('formats', static function() {
@@ -158,6 +162,7 @@ $routeFound = router('delete-user/:id', static function($id) {
 # HTTP 404 route
 if (!$routeFound) {
     header("HTTP/1.0 404 Not Found");
-    echo "404 Not Found";
+    $pagesInstance = new Pages();
+    $pagesInstance->error_404();
     exit();
 }
