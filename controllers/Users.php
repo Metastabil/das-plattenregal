@@ -68,7 +68,7 @@ class Users extends Controller {
                 $data['error'] = esc(LANG['errors']['error']);
             }
 
-            redirect('users');
+            redirect(base_url('users'));
         }
         else {
             $data['error'] = esc(LANG['errors']['required_error']);
