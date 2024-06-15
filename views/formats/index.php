@@ -23,7 +23,7 @@
     </thead>
     <tbody>
         <?php foreach ($elements as $element) : ?>
-            <tr onclick="showUser(<?= $element['id'] ?>)" title="<?= esc(LANG['actions']['show']) ?>">
+            <tr onclick="showFormat(<?= $element['id'] ?>)" title="<?= esc(LANG['actions']['show']) ?>">
                 <td><?= $element['name'] ?></td>
                 <td><?= esc($element['description']) ?></td>
                 <td><?= format_timestamp($element['created']) ?></td>
@@ -33,7 +33,7 @@
                         <i class="fas fa-pen-to-square ico-edit"></i>
                     </a>
 
-                    <a href="javascript:confirmUserDelete(<?= $element['id'] ?>)" title="<?= esc(LANG['actions']['delete']) ?>">
+                    <a href="javascript:confirmFormatDelete(<?= $element['id'] ?>)" title="<?= esc(LANG['actions']['delete']) ?>">
                         <i class="fa-solid fa-trash-can ico-delete"></i>
                     </a>
                 </td>
