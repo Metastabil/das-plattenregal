@@ -24,7 +24,7 @@
     <tbody>
         <?php foreach ($elements as $element) : ?>
             <tr onclick="showUser(<?= $element['id'] ?>)" title="<?= esc(LANG['actions']['show']) ?>">
-                <td><?= esc($element['name']) ?></td>
+                <td><?= $element['name'] ?></td>
                 <td><?= esc($element['description']) ?></td>
                 <td><?= format_timestamp($element['created']) ?></td>
                 <td><?= format_timestamp($element['updated']) ?></td>
