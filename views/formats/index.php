@@ -25,7 +25,7 @@
         <?php foreach ($elements as $element) : ?>
             <tr onclick="showFormat(<?= $element['id'] ?>)" title="<?= esc(LANG['actions']['show']) ?>">
                 <td><?= $element['name'] ?></td>
-                <td><?= esc($element['description']) ?></td>
+                <td><?= $element['description'] ?></td>
                 <td><?= format_timestamp($element['created']) ?></td>
                 <td><?= format_timestamp($element['updated']) ?></td>
                 <td class="table-actions">

@@ -65,7 +65,7 @@ class FormatModel extends Model {
             $params[$key] = $value;
         }
 
-        $sql = "UPDATE $this->table SET " . implode(', ', $setClauses) . "WHERE id = :id";
+        $sql = "UPDATE $this->table SET " . implode(', ', $setClauses) . " WHERE id = :id";
 
         return $this->db->prepare($sql)->execute($params);
     }

@@ -92,8 +92,49 @@ class Formats extends Controller {
                    ->render('templates/footer');
     }
 
+    /**
+     * @param int $id
+     * @return void
+     */
     public function edit(int $id) :void {
+        $data = [
+            'title' => esc(LANG['titles']['formats']['create']),
+            'element' => $this->formatModel->get($id)
+        ];
 
+        $required = ['name'];
+
+        if (is_get()) {
+            $this->view->render('templates/header', $data)
+                       ->render('formats/edit', $data)
+                       ->render('templates/footer');
+
+            return;
+        }
+
+        if (is_post() && check_for_required_fields($required)) {
+            $form_data = [
+                'name' => esc(get_input('name')),
+                'description' => esc(get_input('description'))
+            ];
+
+            if ($this->formatModel->update($id, $form_data)) {
+                set_message('success', esc(LANG['messages']['successfully_updated']));
+            }
+            else {
+                set_message('error', esc(LANG['errors']['required_error']));
+            }
+
+            redirect(base_url('formats'));
+
+        }
+        else {
+            set_message('error', esc(LANG['errors']['required_error']));
+        }
+
+        $this->view->render('templates/header', $data)
+                   ->render('formats/edit', $data)
+                   ->render('templates/footer');
     }
 
     public function delete(int $id) :void {
