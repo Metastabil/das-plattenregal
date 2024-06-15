@@ -72,7 +72,13 @@ class Pages extends Controller {
     public function dashboard() :void {
         redirect_if_not_authenticated();
 
+        $data = [
+            'title' => esc(LANG['titles']['pages']['dashboard'])
+        ];
 
+        $this->view->render('templates/header', $data)
+                   ->render('pages/dashboard', $data)
+                   ->render('templates/footer');
     }
 
     /**
