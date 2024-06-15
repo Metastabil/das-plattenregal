@@ -12,3 +12,15 @@
 table.dataTable {
     width: 100% !important;
 }
+
+div.dt-container .dt-paging .dt-paging-button.current, div.dt-container .dt-paging .dt-paging-button.current:hover {
+    background: linear-gradient(to bottom, var(--dark-blue) 5%, var(--light-blue) 100%); !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button {
+    color: var(--white) !important;
+}
+
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background: linear-gradient(to bottom, var(--dark-blue) 5%, var(--light-blue) 100%); !important;
+}
