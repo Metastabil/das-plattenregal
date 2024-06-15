@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+use KPO\Controllers\Formats;
 use KPO\Controllers\Pages;
 use KPO\Controllers\Shelves;
 use KPO\Controllers\Users;
@@ -78,6 +79,38 @@ $routeFound = router('', static function() {
 $routeFound = router('login', static function() {
     $pagesInstance = new Pages();
     $pagesInstance->login();
+}) || $routeFound;
+
+$routeFound = router('logout', static function() {
+    $pagesInstance = new Pages();
+    $pagesInstance->logout();
+}) || $routeFound;
+
+
+# Format related routes
+$routeFound = router('formats', static function() {
+    $formatsInstance = new Formats();
+    $formatsInstance->index();
+}) || $routeFound;
+
+$routeFound = router('create-format', static function() {
+    $formatsInstance = new Formats();
+    $formatsInstance->create();
+}) || $routeFound;
+
+$routeFound = router('edit-format/:id', static function($id) {
+    $formatsInstance = new Formats();
+    $formatsInstance->edit($id);
+}) || $routeFound;
+
+$routeFound = router('show-format/:id', static function($id) {
+    $formatsInstance = new Formats();
+    $formatsInstance->show($id);
+}) || $routeFound;
+
+$routeFound = router('delete-format/:id', static function($id) {
+    $formatsInstance = new Formats();
+    $formatsInstance->delete($id);
 }) || $routeFound;
 
 # Shelf related routes

@@ -18,7 +18,7 @@ class FormatModel extends Model {
      * @param bool $with_deleted
      * @return array
      */
-    public function get(int $id, bool $with_deleted = false) :array {
+    public function get(int $id = 0, bool $with_deleted = false) :array {
         $sql = "SELECT id, name, description, deleted, created, updated 
                 FROM {$this->table}";
         $params = [];

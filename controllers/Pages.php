@@ -1,6 +1,7 @@
 <?php
 namespace KPO\Controllers;
 
+use JetBrains\PhpStorm\NoReturn;
 use KPO\Models\UserModel;
 
 /**
@@ -56,6 +57,16 @@ class Pages extends Controller {
         }
 
         $this->view->render('pages/login', $data);
+    }
+
+    /**
+     * @return void
+     */
+    #[NoReturn] public function logout() :void {
+        session_destroy();
+        unset($_SESSION['user']);
+
+        redirect(base_url('login'));
     }
 
     /**

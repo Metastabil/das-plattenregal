@@ -96,6 +96,7 @@ $lang['messages']['successfully_created'] = 'Der Eintrag wurde erfolgreich angel
 ########################################################################################################################
 $lang['confirmations']['users']['delete'] = 'Wollen Sie den Benutzer wirklich löschen?';
 $lang['confirmations']['shelves']['delete'] = 'Wollen Sie das Regal wirklich löschen?';
+$lang['confirmations']['formats']['delete'] = 'Wollen Sie das Format wirklich löschen?';
 
 ########################################################################################################################
 # Data Tables ##########################################################################################################

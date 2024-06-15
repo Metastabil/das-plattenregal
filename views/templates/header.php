@@ -54,7 +54,7 @@
                     <?= esc(LANG['navigation']['records']) ?>
                 </a>
 
-                <a href="javascript:void(0)" title="<?= esc(LANG['navigation']['formats']) ?>">
+                <a href="<?= base_url('formats') ?>" title="<?= esc(LANG['navigation']['formats']) ?>">
                     <span class="nav-icon">
                         <i class="fa-solid fa-list"></i>
                     </span>
