@@ -24,6 +24,21 @@ body {
     background-color: var(--background);
 }
 
+header {
+    background-color: var(--dark-grey);
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+}
+
+.logo-container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
 .left-aside {
     background-color: var(--dark-grey);
     position: fixed;
@@ -32,36 +47,30 @@ body {
     width: 300px;
 }
 
-.logo-container {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin: 0 0 50px 0;
-    display: flex;
-}
-
 .logo-container svg {
     filter: drop-shadow(0 0 10px var(--black));
     color: var(--dark-blue);
-    font-size: 75px;
+    font-size: 50px;
 }
 
 .logo-container h1 {
     filter: drop-shadow(0 0 10px var(--black));
+    font-size: 25px;
     color: var(--dark-blue);
     margin: 0 0 0 10px;
 }
 
 nav {
+    margin: 0 0 0 50px;
     width: 100%;
 }
 
 nav a {
     transition: background-color .3s ease-in-out;
     text-decoration: none;
+    display: inline-block;
     color: var(--white);
     border-radius: 5px;
-    display: block;
     padding: 10px;
 }
 
@@ -71,13 +80,22 @@ nav a:hover {
 
 .nav-icon {
     display: inline-block;
-    width: 40px;
+    width: 22px;
+}
+
+nav .logout {
+    background-color: var(--light-red);
+    color: var(--black);
+    float: right;
+}
+
+nav .logout:hover {
+    background-color: var(--dark-red);
 }
 
 main {
-    width: calc(100% - 300px);
-    margin: 0 0 0 300px;
     padding: 10px;
+    width: 100%;
 }
 
 .title {

@@ -26,7 +26,7 @@
     <body>
         <!-- TODO ~> Implement displaying of session messages -->
 
-        <aside class="left-aside">
+        <header>
             <div class="logo-container">
                 <i class="fa-solid fa-record-vinyl"></i>
                 <h1>Das<br />Plattenregal</h1>
@@ -74,8 +74,12 @@
                     </span>
                     <?= esc(LANG['navigation']['users']) ?>
                 </a>
+
+                <a href="<?= base_url('logout') ?>" title="<?= esc(LANG['actions']['logout']) ?>" class="logout">
+                    <?= esc(LANG['actions']['logout']) ?>
+                </a>
             </nav>
-        </aside>
+        </header>
         <main>
             <h1 class="title">
                 <?= $title ?>
