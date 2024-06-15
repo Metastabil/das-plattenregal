@@ -77,8 +77,19 @@ class Formats extends Controller {
                    ->render('templates/footer');
     }
 
+    /**
+     * @param int $id
+     * @return void
+     */
     public function show(int $id) :void {
+        $data = [
+            'title' => esc(LANG['titles']['formats']['show']),
+            'element' => $this->formatModel->get($id)
+        ];
 
+        $this->view->render('templates/header', $data)
+                   ->render('formats/show', $data)
+                   ->render('templates/footer');
     }
 
     public function edit(int $id) :void {

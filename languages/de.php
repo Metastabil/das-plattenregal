@@ -78,6 +78,7 @@ $lang['actions']['logout'] = 'Abmelden';
 $lang['actions']['create'] = 'Neuen Eintrag Anlegen';
 $lang['actions']['search'] = 'Suchen';
 $lang['actions']['change_status'] = 'Status ändern';
+$lang['actions']['back'] = 'Zurück';
 
 ########################################################################################################################
 # Errors ###############################################################################################################
