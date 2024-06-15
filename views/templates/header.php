@@ -54,26 +54,28 @@
                     <?= esc(LANG['navigation']['records']) ?>
                 </a>
 
-                <a href="<?= base_url('formats') ?>" title="<?= esc(LANG['navigation']['formats']) ?>">
-                    <span class="nav-icon">
-                        <i class="fa-solid fa-list"></i>
-                    </span>
-                    <?= esc(LANG['navigation']['formats']) ?>
-                </a>
+                <?php if (is_administrator()) : ?>
+                    <a href="<?= base_url('formats') ?>" title="<?= esc(LANG['navigation']['formats']) ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-list"></i>
+                        </span>
+                        <?= esc(LANG['navigation']['formats']) ?>
+                    </a>
 
-                <a href="javascript:void(0)" title="<?= esc(LANG['navigation']['conditions']) ?>">
-                    <span class="nav-icon">
-                        <i class="fa-solid fa-list"></i>
-                    </span>
-                    <?= esc(LANG['navigation']['conditions']) ?>
-                </a>
+                    <a href="javascript:void(0)" title="<?= esc(LANG['navigation']['conditions']) ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-list"></i>
+                        </span>
+                        <?= esc(LANG['navigation']['conditions']) ?>
+                    </a>
 
-                <a href="<?= base_url('users') ?>" title="<?= esc(LANG['navigation']['users']) ?>">
-                    <span class="nav-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </span>
-                    <?= esc(LANG['navigation']['users']) ?>
-                </a>
+                    <a href="<?= base_url('users') ?>" title="<?= esc(LANG['navigation']['users']) ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </span>
+                        <?= esc(LANG['navigation']['users']) ?>
+                    </a>
+                <?php endif ?>
 
                 <a href="<?= base_url('logout') ?>" title="<?= esc(LANG['actions']['logout']) ?>" class="logout">
                     <?= esc(LANG['actions']['logout']) ?>
