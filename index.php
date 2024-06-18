@@ -154,6 +154,11 @@ $routeFound = router('create-user', static function() {
     $usersInstance->create();
 }) || $routeFound;
 
+$routeFound = router('show-user/:id', static function($id) {
+    $usersInstance = new Users();
+    $usersInstance->show($id);
+}) || $routeFound;
+
 $routeFound = router('delete-user/:id', static function($id) {
     $usersInstance = new Users();
     $usersInstance->delete((int)$id);

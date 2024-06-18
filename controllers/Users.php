@@ -85,7 +85,14 @@ class Users extends Controller {
      * @todo Also display all shelves a user has created
      */
     public function show(int $id) :void {
+        $data = [
+            'title' => esc(LANG['titles']['users']['show']),
+            'element' => $this->userModel->get($id, '', true)
+        ];
 
+        $this->view->render('templates/header', $data)
+                   ->render('users/show', $data)
+                   ->render('templates/footer');
     }
 
     /**
