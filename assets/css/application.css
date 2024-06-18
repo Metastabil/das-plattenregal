@@ -21,11 +21,12 @@ body {
 
 body {
     font: 400 normal 18px 'Rubik', sans-serif;
-    background-color: var(--background);
+    background-color: var(--dark-blue);
 }
 
 header {
-    background-color: var(--dark-grey);
+    background-color: rgba(255, 255, 255, .5);
+    border-bottom: 2px solid var(--white);
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
@@ -39,25 +40,15 @@ header {
     display: flex;
 }
 
-.left-aside {
-    background-color: var(--dark-grey);
-    position: fixed;
-    padding: 25px;
-    height: 100vh;
-    width: 300px;
-}
-
 .logo-container svg {
-    filter: drop-shadow(0 0 10px var(--black));
-    color: var(--dark-blue);
+    color: var(--dark-grey);
     font-size: 50px;
 }
 
 .logo-container h1 {
-    filter: drop-shadow(0 0 10px var(--black));
-    font-size: 25px;
-    color: var(--dark-blue);
+    color: var(--dark-grey);
     margin: 0 0 0 10px;
+    font-size: 25px;
 }
 
 nav {
@@ -69,13 +60,26 @@ nav a {
     transition: background-color .3s ease-in-out;
     text-decoration: none;
     display: inline-block;
-    color: var(--white);
+    color: var(--dark-grey);
     border-radius: 5px;
     padding: 10px;
+    position: relative;
 }
 
-nav a:hover {
-    background-color: var(--background);
+nav a:after {
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    background-color: var(--dark-grey);
+    position: absolute;
+    display: block;
+    height: 2px;
+    content: "";
+    left: 50%;
+    width: 0;
+    top: 5px;
+}
+nav a:hover:after {
+    width: 100%;
+    left: 0;
 }
 
 .nav-icon {
@@ -145,7 +149,7 @@ main {
 }
 
 .default-table thead th {
-    background-image: linear-gradient(to bottom, var(--light-blue) 5%, var(--dark-blue) 100%);
+    background-color: rgba(255, 255, 255, .5);
 }
 
 .default-table tbody td {
@@ -154,12 +158,11 @@ main {
 }
 
 .default-table tbody tr:hover td {
-    color: var(--light-blue);
+    color: var(--dark-grey);
     cursor: pointer;
 }
 
 .default-table .table-actions {
-    width: 100px !important;
 }
 
 .default-table .table-actions a {

@@ -5,7 +5,8 @@
 
 .dt-search input {
     font: 400 normal 18px 'Rubik', sans-serif;
-    color: var(--white) !important;
+    background-color: var(--white) !important;
+    border: none !important;
     outline: none;
 }
 
