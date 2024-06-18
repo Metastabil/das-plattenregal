@@ -21,12 +21,11 @@ body {
 
 body {
     font: 400 normal 18px 'Rubik', sans-serif;
-    background-color: var(--dark-blue);
 }
 
 header {
-    background-color: rgba(255, 255, 255, .5);
-    border-bottom: 2px solid var(--white);
+    background-image: linear-gradient(to right, var(--dark-blue) 5%, var(--light-blue) 100%);
+    border-bottom: 2px solid var(--dark-blue);
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
@@ -97,13 +96,17 @@ nav .logout:hover {
     background-color: var(--dark-red);
 }
 
+nav .logout:hover:after {
+    width: 0;
+}
+
 main {
     padding: 10px;
     width: 100%;
 }
 
 .title {
-    color: var(--white);
+    color: var(--dark-grey);
     margin: 0 0 25px 0;
 }
 
@@ -117,7 +120,6 @@ main {
 }
 
 .default-form .input-wrapper label {
-    color: var(--white);
     margin: 0 0 5px 0;
     display: block;
 }
@@ -130,10 +132,9 @@ main {
 .default-form .input-wrapper input,
 .default-form .input-wrapper textarea {
     font: 400 normal 18px 'Rubik', sans-serif;
-    border-radius: 5px;
+    border: 1px solid var(--dark-grey);
     outline: none;
     padding: 10px;
-    border: none;
     width: 400px;
 }
 
@@ -149,20 +150,22 @@ main {
 }
 
 .default-table thead th {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: var(--dark-blue);
+    color: var(--white);
 }
 
 .default-table tbody td {
     transition: color .3s ease-in-out;
-    color: var(--white);
+    color: var(--dark-grey);
 }
 
 .default-table tbody tr:hover td {
-    color: var(--dark-grey);
+    color: var(--dark-blue);
     cursor: pointer;
 }
 
 .default-table .table-actions {
+    width: 100px !important;
 }
 
 .default-table .table-actions a {

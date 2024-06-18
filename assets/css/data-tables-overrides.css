@@ -1,12 +1,13 @@
 .dt-search label {
     font: 400 normal 18px 'Rubik', sans-serif;
-    color: var(--white);
 }
 
 .dt-search input {
     font: 400 normal 18px 'Rubik', sans-serif;
     background-color: var(--white) !important;
-    border: none !important;
+    border: 1px solid var(--dark-grey);
+    border-radius: 0 !important;
+    padding: 10px !important;
     outline: none;
 }
 
@@ -14,14 +15,10 @@ table.dataTable {
     width: 100% !important;
 }
 
-div.dt-container .dt-paging .dt-paging-button.current, div.dt-container .dt-paging .dt-paging-button.current:hover {
-    background: linear-gradient(to bottom, var(--dark-blue) 5%, var(--light-blue) 100%); !important;
-}
-
 div.dt-container .dt-paging .dt-paging-button {
     color: var(--white) !important;
 }
 
 div.dt-container .dt-paging .dt-paging-button:hover {
-    background: linear-gradient(to bottom, var(--dark-blue) 5%, var(--light-blue) 100%); !important;
+    background-color: var(--dark-blue) !important;
 }

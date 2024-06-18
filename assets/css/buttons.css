@@ -1,5 +1,6 @@
 .btn {
     font: 400 normal 18px 'Rubik', sans-serif;
+    transition: scale .3s ease-in-out;
     text-decoration: none;
     display: inline-block;
     color: var(--white);
@@ -12,19 +13,26 @@
     position: relative;
     top: 1px;
 }
+
+.btn:hover {
+    scale: 105%;
+}
+
 .btn-centered {
     display: block;
     margin: 0 auto;
 }
 
-.btn-blue {
+.btn-dark-grey{
     background-color: var(--dark-grey);
-    transition: scale .3s ease-in-out;
-    padding: 8px 16px;
 }
 
-.btn-blue:hover {
-    scale: 105%;
+.btn-blue {
+    background-color: var(--dark-blue);
+}
+
+.btn-red {
+    background-color: var(--dark-red);
 }
 
 

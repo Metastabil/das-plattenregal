@@ -70,7 +70,7 @@
                         ]) ?>
                     </div>
 
-                    <button title="<?= esc(LANG['actions']['login']) ?>" class="btn btn-blue btn-centered">
+                    <button title="<?= esc(LANG['actions']['login']) ?>" class="btn btn-dark-grey btn-centered">
                         <?= esc(LANG['actions']['login']) ?>
                     </button>
                 </form>
