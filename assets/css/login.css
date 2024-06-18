@@ -7,6 +7,11 @@
     src: url('../fonts/Rubik.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Playwrite France Moderne';
+    src: url('../fonts/PlaywriteFranceModerne.ttf') format('truetype');
+}
+
 * { box-sizing: border-box; }
 
 html,
@@ -18,71 +23,101 @@ body {
 
 body {
     font: 400 normal 18px 'Rubik', sans-serif;
-    background-color: var(--background);
+    background-color: var(--dark-blue);
 }
 
-.left-aside {
-    background-color: var(--dark-grey);
-    position: fixed;
-    padding: 25px;
-    height: 100vh;
-    width: 400px;
-}
-
-.logo-container {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    margin: 0 0 50px 0;
-    display: flex;
-}
-
-.logo-container svg {
-    filter: drop-shadow(0 0 10px var(--black));
-    color: var(--dark-blue);
-    font-size: 100px;
-}
-
-.logo-container h1 {
-    filter: drop-shadow(0 0 10px var(--black));
-    color: var(--dark-blue);
-    margin: 0 0 0 10px;
-}
-
-.login-form {
-    margin: 50% 0 0 0;
+main {
+    height: 100%;
     width: 100%;
 }
 
-.login-form .input-wrapper {
+div.login-container {
+    background-color: rgba(255, 255, 255, .5);
+    border-bottom: 2px solid var(--white);
+    border-top: 2px solid var(--white);
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    padding: 25px;
+    height: 450px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+}
+
+div.login-container > .logo-container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+
+div.login-container > div.logo-container > svg {
+    color: var(--dark-grey);
+    font-size: 75px;
+}
+
+div.login-container > div.logo-container > h1 {
+    color: var(--dark-grey);
+    margin: 0 0 0 10px;
+}
+
+form.login-form {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 35%;
+    left: 50%;
+    top: 55%;
+}
+
+form.login-form > div.input-wrapper {
     margin: 0 0 25px 0;
     width: 100%;
 }
 
-.login-form .input-wrapper label {
-    color: var(--white);
-    margin: 0 0 5px 0;
+form.login-form > div.input-wrapper > label,
+form.login-form > div.input-wrapper > input {
     display: block;
 }
 
-.login-form .input-wrapper label .required {
-    color: var(--dark-red) !important;
-    cursor: help;
+form.login-form > div.input-wrapper > label {
+    margin: 0 0 5px 0;
 }
 
-.login-form .input-wrapper input {
+form.login-form > div.input-wrapper > input {
     font: 400 normal 18px 'Rubik', sans-serif;
-    border-radius: 5px;
+    border: 1px solid var(--black);
     outline: none;
     padding: 10px;
-    border: none;
     width: 100%;
 }
 
-main {
-    background: url('../images/background.jpg') no-repeat fixed center center;
-    width: calc(100% - 400px);
-    background-size: cover;
-    margin: 0 0 0 400px;
-    height: 100%;
+form.login-form > button {
+    width: 50%;
+}
+
+div.action-wrapper {
+    justify-content: space-around;
+    transform: translateX(-50%);
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    bottom: 25px;
+    width: 35%;
+    left: 50%;
+}
+
+div.action-wrapper > a {
+    color: var(--dark-grey);
+    text-decoration: none;
+}
+
+div.action-wrapper > a:hover {
+    text-decoration: underline;
+}
+
+div.action-wrapper > a:active {
+    position: relative;
+    top: 1px;
 }

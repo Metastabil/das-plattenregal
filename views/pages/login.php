@@ -1,7 +1,6 @@
 <?php
 /**
  * @var string $title
- * @var string $error
  */
 ?>
 
@@ -18,64 +17,59 @@
         <script src="<?= base_url() . 'assets/js/ui-library.js' ?>"></script>
     </head>
     <body>
-        <?php if (!empty($error)) : ?>
-            <script>
-                $(() => {
-                    console.log('<?= $error ?>');
-                    displayNotification({
-                        text: '<?= $error ?>',
-                        displayTime: 2500,
-                        type: 'error',
-                    });
-                });
-            </script>
-        <?php endif ?>
-        <aside class="left-aside">
-            <div class="logo-container">
-                <i class="fa-solid fa-record-vinyl"></i>
-                <h1>Das<br />Plattenregal</h1>
-            </div>
-
-            <form action="<?= base_url('login') ?>" method="post" class="login-form">
-                <div class="input-wrapper">
-                    <label for="email">
-                        <?= esc(LANG['users']['attributes']['email']) ?>
-                        <span class="required" title="<?= esc(LANG['undefined']['required']) ?>">*</span>
-                    </label>
-                    <?= form_input([
-                        'type' => 'email',
-                        'name' => 'email',
-                        'id' => 'email',
-                        'title' => esc(LANG['users']['attributes']['email']),
-                        'placeholder' => esc(LANG['users']['attributes']['email']),
-                        'autocomplete' => 'off'
-                    ]) ?>
-                </div>
-                <div class="input-wrapper">
-                    <label for="password">
-                        <?= esc(LANG['users']['attributes']['password']) ?>
-                        <span class="required" title="<?= esc(LANG['undefined']['required']) ?>">*</span>
-                    </label>
-                    <?= form_input([
-                        'type' => 'password',
-                        'name' => 'password',
-                        'id' => 'password',
-                        'title' => esc(LANG['users']['attributes']['password']),
-                        'placeholder' => esc(LANG['users']['attributes']['password']),
-                        'autocomplete' => 'off'
-                    ]) ?>
-                </div>
-
-                <button title="<?= esc(LANG['actions']['login']) ?>" class="btn btn-blue btn-centered">
-                    <span>
-                        <?= esc(LANG['actions']['login']) ?>
-                    </span>
-                </button>
-            </form>
-        </aside>
-
         <main>
+            <div class="login-container">
+                <div class="logo-container">
+                    <i class="fa-solid fa-record-vinyl"></i>
+                    <h1><?= split_by_space(LANG['project_name'])[0] ?><br /><?= split_by_space(LANG['project_name'])[1] ?></h1>
+                </div>
 
+                <form action="<?= base_url('login') ?>" method="post" class="login-form">
+                    <div class="input-wrapper">
+                        <label for="email">
+                            <?= esc(LANG['users']['attributes']['email']) ?>
+                        </label>
+                        <?= form_input([
+                            'type' => 'email',
+                            'name' => 'email',
+                            'id' => 'email',
+                            'placeholder' => esc(LANG['users']['attributes']['email']),
+                            'title' => esc(LANG['users']['attributes']['email']),
+                            'autocomplete' => 'off',
+                            'maxlength' => 255
+                        ]) ?>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="password">
+                            <?= esc(LANG['users']['attributes']['password']) ?>
+                        </label>
+                        <?= form_input([
+                            'type' => 'password',
+                            'name' => 'password',
+                            'id' => 'password',
+                            'placeholder' => esc(LANG['users']['attributes']['password']),
+                            'title' => esc(LANG['users']['attributes']['password']),
+                            'autocomplete' => 'off',
+                            'maxlength' => 255
+                        ]) ?>
+                    </div>
+
+                    <button title="<?= esc(LANG['actions']['login']) ?>" class="btn btn-blue btn-centered">
+                        <?= esc(LANG['actions']['login']) ?>
+                    </button>
+                </form>
+
+                <div class="action-wrapper">
+                    <a href="javascript:void(0)" title="<?= esc(LANG['undefined']['new_here'] . LANG['actions']['register']) ?>">
+                        <?= esc(LANG['undefined']['new_here'] . LANG['actions']['register']) ?>
+                    </a>
+
+                    <a href="javascript:void(0)" title="<?= esc(LANG['undefined']['forgot_password']) ?>">
+                        <?= esc(LANG['undefined']['forgot_password']) ?>
+                    </a>
+                </div>
+            </div>
         </main>
     </body>
 </html>

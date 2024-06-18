@@ -2,8 +2,7 @@
     font: 400 normal 18px 'Rubik', sans-serif;
     text-decoration: none;
     display: inline-block;
-    color: var(--black);
-    border-radius: 5px;
+    color: var(--white);
     padding: 8px 16px;
     cursor: pointer;
     border: none;
@@ -18,8 +17,18 @@
     margin: 0 auto;
 }
 
-
 .btn-blue {
+    background-color: var(--dark-grey);
+    transition: scale .3s ease-in-out;
+    padding: 8px 16px;
+}
+
+.btn-blue:hover {
+    scale: 105%;
+}
+
+
+/* .btn-blue {
     background: linear-gradient(to bottom, var(--light-blue) 5%, var(--dark-blue) 100%);
     text-shadow: 1px 1px var(--dark-blue);
     color: var(--black);
@@ -81,4 +90,4 @@
 .btn-red span {
     position: relative;
     z-index: 3;
-}
+} */

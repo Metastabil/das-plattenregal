@@ -12,6 +12,8 @@ $lang['undefined']['yes'] = 'Ja';
 $lang['undefined']['no'] = 'Nein';
 $lang['undefined']['table'] = 'Tabelle';
 $lang['undefined']['graphics'] = 'Grafik';
+$lang['undefined']['new_here'] = 'Neu hier? Hier ';
+$lang['undefined']['forgot_password'] = 'Passwort vergessen?';
 
 ########################################################################################################################
 # Titles ###############################################################################################################
