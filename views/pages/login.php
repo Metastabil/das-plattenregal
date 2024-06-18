@@ -17,6 +17,21 @@
         <script src="<?= base_url() . 'assets/js/ui-library.js' ?>"></script>
     </head>
     <body>
+        <?php if (!empty($_SESSION['message'])) : ?>
+            <script>
+                $(() => {
+                    const message = <?= array_to_json($_SESSION['message']) ?>;
+                    displayNotification({
+                        type: message['type'],
+                        text: message['text'],
+                        displayTime: 2500
+                    });
+                });
+            </script>
+
+            <?php unset_message() ?>
+        <?php endif ?>
+
         <main>
             <div class="login-container">
                 <div class="logo-container">

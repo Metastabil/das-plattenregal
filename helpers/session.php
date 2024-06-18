@@ -42,9 +42,18 @@ if (!function_exists('set_message')) {
      * @return void
      */
     function set_message(string $type, string $message) :void {
-        $_SESSION['messages'] = [
+        $_SESSION['message'] = [
             'type' => $type,
-            'message' => $message
+            'text' => $message
         ];
+    }
+}
+
+if (!function_exists('unset_message')) {
+    /**
+     * @return void
+     */
+    function unset_message() :void {
+        unset($_SESSION['messages']);
     }
 }

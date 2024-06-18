@@ -22,8 +22,7 @@ class Pages extends Controller {
      */
     public function login() :void {
         $data = [
-            'title' => esc(LANG['titles']['pages']['login']),
-            'error' => ''
+            'title' => esc(LANG['titles']['pages']['login'])
         ];
 
         $required = ['email', 'password'];
@@ -49,11 +48,11 @@ class Pages extends Controller {
                 redirect('dashboard');
             }
             else {
-                $data['error'] = esc(LANG['errors']['unknown_credentials']);
+                set_message('error',  esc(LANG['errors']['unknown_credentials']));
             }
         }
         else {
-            $data['error'] = esc(LANG['errors']['required_error']);
+            set_message('error', esc(LANG['errors']['required_error']));
         }
 
         $this->view->render('pages/login', $data);
