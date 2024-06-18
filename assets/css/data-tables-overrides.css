@@ -22,3 +22,22 @@ div.dt-container .dt-paging .dt-paging-button {
 div.dt-container .dt-paging .dt-paging-button:hover {
     background-color: var(--dark-blue) !important;
 }
+
+div.dt-container .dt-paging .dt-paging-button {
+    font: 400 normal 14px 'Rubik', sans-serif;
+}
+
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background-color: var(--dark-blue) !important;
+    border: 1px solid var(--dark-blue);
+    background-image: none;
+}
+
+div.dt-container.dt-empty-footer tbody > tr:last-child > * {
+    border: none !important;
+}
+
+.dataTable thead th {
+    text-align: left !important;
+    border: none !important;
+}

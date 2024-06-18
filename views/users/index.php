@@ -53,11 +53,17 @@
 <script>
     $(() => {
         $('#users-index-table').DataTable({
+            pagingType: 'simple_numbers',
             lengthChange: false,
             info: false,
             language: {
+                emptyTable: lang['data_tables']['empty_table'],
                 search: lang['actions']['search']
-            }
+            },
+            columnDefs: [{
+                target: 4,
+                orderable: false
+            }],
         });
     });
 
