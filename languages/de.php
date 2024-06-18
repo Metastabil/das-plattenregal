@@ -94,6 +94,8 @@ $lang['errors']['error'] = 'Es ist ein Fehler aufgetreten.';
 ########################################################################################################################
 $lang['messages']['successfully_created'] = 'Der Eintrag wurde erfolgreich angelegt.';
 $lang['messages']['successfully_updated'] = 'Der Eintrag wurde erfolgreich aktualisiert.';
+$lang['messages']['successfully_activated'] = 'Der Benutzer wurde erfolgreich aktiviert.';
+$lang['messages']['successfully_deactivated'] = 'Der Benutzer wurde erfolgreich deaktiviert.';
 
 ########################################################################################################################
 # Confirmations ########################################################################################################

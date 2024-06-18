@@ -99,6 +99,36 @@ class Users extends Controller {
      * @param int $id
      * @return void
      */
+    public function change_status(int $id) :void {
+        $user = $this->userModel->get($id, '', true);
+
+        switch ((bool)$user['active']) {
+            case true:
+                if ($this->userModel->update($id, ['active' => 0])) {
+                    set_message('success', esc(LANG['messages']['successfully_deactivated']));
+                }
+                else {
+                    set_message('error', esc(LANG['errors']['error']));
+                }
+
+                break;
+            case false:
+                if ($this->userModel->update($id, ['active' => 1])) {
+                    set_message('success', esc(LANG['messages']['successfully_activated']));
+                }
+                else {
+                    set_message('error', esc(LANG['errors']['error']));
+                }
+                break;
+        }
+
+        redirect(base_url('users'));
+    }
+
+    /**
+     * @param int $id
+     * @return void
+     */
     #[NoReturn] public function delete(int $id) :void {
         if ($this->userModel->delete($id)) {
             redirect(base_url('users'));
