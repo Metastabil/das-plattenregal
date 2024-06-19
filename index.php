@@ -165,6 +165,11 @@ $routeFound = router('show-user/:id', static function($id) {
     $usersInstance->show($id);
 }) || $routeFound;
 
+$routeFound = router('edit-user/:id', static function($id) {
+    $usersInstance = new Users();
+    $usersInstance->edit($id);
+}) || $routeFound;
+
 $routeFound = router('change-user-status/:id', static function($id) {
     $usersInstance = new Users();
     $usersInstance->change_status($id);
