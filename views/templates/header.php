@@ -69,6 +69,13 @@
                         <?= esc(LANG['navigation']['conditions']) ?>
                     </a>
 
+                    <a href="<?= base_url('modules') ?>" title="<?= esc(LANG['navigation']['modules']) ?>">
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-list"></i>
+                        </span>
+                        <?= esc(LANG['navigation']['modules']) ?>
+                    </a>
+
                     <a href="<?= base_url('users') ?>" title="<?= esc(LANG['navigation']['users']) ?>">
                         <span class="nav-icon">
                             <i class="fa-solid fa-users"></i>

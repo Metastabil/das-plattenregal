@@ -43,6 +43,11 @@ $lang['titles']['formats']['create'] = 'Format anlegen';
 $lang['titles']['formats']['update'] = 'Format bearbeiten';
 $lang['titles']['formats']['show'] = 'Format anzeigen';
 
+$lang['titles']['modules']['index'] = 'Übersicht der Module';
+$lang['titles']['modules']['create'] = 'Modul anlegen';
+$lang['titles']['modules']['update'] = 'Modul bearbeiten';
+$lang['titles']['modules']['show'] = 'Modul anzeigen';
+
 $lang['titles']['conditions']['index'] = 'Übersicht der Zustände';
 $lang['titles']['conditions']['create'] = 'Zustand anlegen';
 $lang['titles']['conditions']['update'] = 'Zustand bearbeiten';
@@ -63,6 +68,7 @@ $lang['navigation']['records'] = 'Schallplatten';
 $lang['navigation']['formats'] = 'Formate';
 $lang['navigation']['conditions'] = 'Zustände';
 $lang['navigation']['users'] = 'Benutzer';
+$lang['navigation']['modules'] = 'Module';
 $lang['navigation']['imprint'] = 'Impressum';
 $lang['navigation']['data_privacy'] = 'Datenschutz';
 
@@ -143,6 +149,15 @@ $lang['records']['attributes']['shelf'] = 'Regal';
 $lang['records']['attributes']['shelf_compartment'] = 'Regalfach';
 $lang['records']['attributes']['created'] = 'Angelegt am';
 $lang['records']['attributes']['updated'] = 'Aktualisiert am';
+
+########################################################################################################################
+# Modules ##############################################################################################################
+########################################################################################################################
+$lang['modules']['attributes']['name'] = 'Bezeichnung';
+$lang['modules']['attributes']['description'] = 'Beschreibung';
+$lang['modules']['attributes']['active'] = 'Aktiv';
+$lang['modules']['attributes']['created'] = 'Angelegt am';
+$lang['modules']['attributes']['updated'] = 'Aktualisiert am';
 
 ########################################################################################################################
 # Shelf Compartments ###################################################################################################

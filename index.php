@@ -2,6 +2,7 @@
 session_start();
 
 use KPO\Controllers\Formats;
+use KPO\Controllers\Modules;
 use KPO\Controllers\Pages;
 use KPO\Controllers\Shelves;
 use KPO\Controllers\Users;
@@ -117,6 +118,14 @@ $routeFound = router('show-format/:id', static function($id) {
 $routeFound = router('delete-format/:id', static function($id) {
     $formatsInstance = new Formats();
     $formatsInstance->delete($id);
+}) || $routeFound;
+
+########################################################################################################################
+# Modul related routs ##################################################################################################
+########################################################################################################################
+$routeFound = router('modules', static function() {
+    $modulesInstance = new Modules();
+    $modulesInstance->index();
 }) || $routeFound;
 
 ########################################################################################################################
