@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+use KPO\Controllers\Conditions;
 use KPO\Controllers\Formats;
 use KPO\Controllers\Modules;
 use KPO\Controllers\Pages;
@@ -90,6 +91,34 @@ $routeFound = router('logout', static function() {
 $routeFound = router('dashboard', static function() {
     $pagesInstance = new Pages();
     $pagesInstance->dashboard();
+}) || $routeFound;
+
+########################################################################################################################
+# Condition related routs ##############################################################################################
+########################################################################################################################
+$routeFound = router('conditions', static function() {
+    $conditionsInstance = new Conditions();
+    $conditionsInstance->index();
+}) || $routeFound;
+
+$routeFound = router('create-condition', static function() {
+    $conditionsInstance = new Conditions();
+    $conditionsInstance->create();
+}) || $routeFound;
+
+$routeFound = router('edit-condition/:id', static function($id) {
+    $conditionsInstance = new Conditions();
+    $conditionsInstance->edit($id);
+}) || $routeFound;
+
+$routeFound = router('show-condition/:id', static function($id) {
+    $conditionsInstance = new Conditions();
+    $conditionsInstance->show($id);
+}) || $routeFound;
+
+$routeFound = router('delete-condition/:id', static function($id) {
+    $conditionsInstance = new Conditions();
+    $conditionsInstance->delete($id);
 }) || $routeFound;
 
 ########################################################################################################################

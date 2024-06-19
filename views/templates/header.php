@@ -62,19 +62,19 @@
                         <?= esc(LANG['navigation']['formats']) ?>
                     </a>
 
-                    <a href="javascript:void(0)" title="<?= esc(LANG['navigation']['conditions']) ?>">
+                    <a href="<?= base_url('conditions') ?>" title="<?= esc(LANG['navigation']['conditions']) ?>">
                         <span class="nav-icon">
                             <i class="fa-solid fa-list"></i>
                         </span>
                         <?= esc(LANG['navigation']['conditions']) ?>
                     </a>
 
-                    <a href="<?= base_url('modules') ?>" title="<?= esc(LANG['navigation']['modules']) ?>">
+                    <!-- <a href="<?= base_url('modules') ?>" title="<?= esc(LANG['navigation']['modules']) ?>">
                         <span class="nav-icon">
                             <i class="fa-solid fa-list"></i>
                         </span>
                         <?= esc(LANG['navigation']['modules']) ?>
-                    </a>
+                    </a> -->
 
                     <a href="<?= base_url('users') ?>" title="<?= esc(LANG['navigation']['users']) ?>">
                         <span class="nav-icon">

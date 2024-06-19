@@ -110,6 +110,7 @@ $lang['messages']['successfully_deleted'] = 'Der Eintrag wurde erfolgreich gelö
 $lang['confirmations']['users']['delete'] = 'Wollen Sie den Benutzer wirklich löschen?';
 $lang['confirmations']['shelves']['delete'] = 'Wollen Sie das Regal wirklich löschen?';
 $lang['confirmations']['formats']['delete'] = 'Wollen Sie das Format wirklich löschen?';
+$lang['confirmations']['conditions']['delete'] = 'Wollen Sie den Zustand wirklich löschen?';
 
 ########################################################################################################################
 # Data Tables ##########################################################################################################
