@@ -7,7 +7,7 @@
 <!DOCTYPE HTML>
 <html lang="de">
     <head>
-        <title><?= esc($title . ' | ' . LANG['project_name']) ?></title>
+        <title><?= $title . ' | ' . LANG['project_name'] ?></title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/png" href="<?= base_url() . 'assets/images/favicon.png' ?>" />
@@ -17,20 +17,20 @@
         <script src="<?= base_url() . 'assets/js/ui-library.js' ?>"></script>
     </head>
     <body>
-        <?php if (!empty($_SESSION['message'])) : ?>
-            <script>
-                $(() => {
-                    const message = <?= array_to_json($_SESSION['message']) ?>;
-                    displayNotification({
-                        type: message['type'],
-                        text: message['text'],
-                        displayTime: 2500
-                    });
+    <?php if (!empty($_SESSION['message'])) : ?>
+        <script>
+            $(() => {
+                const message = <?= array_to_json($_SESSION['message']) ?>;
+                displayNotification({
+                    type: message['type'],
+                    text: message['text'],
+                    displayTime: 2500
                 });
-            </script>
+            });
+        </script>
 
-            <?php unset_message() ?>
-        <?php endif ?>
+        <?php unset_message() ?>
+    <?php endif ?>
 
         <main>
             <div class="login-container">
@@ -41,49 +41,42 @@
 
                 <form action="<?= base_url('login') ?>" method="post" class="login-form">
                     <div class="input-wrapper">
-                        <label for="email">
-                            <?= esc(LANG['users']['attributes']['email']) ?>
-                        </label>
+                        <i class="fa-solid fa-envelope"></i>
                         <?= form_input([
                             'type' => 'email',
                             'name' => 'email',
                             'id' => 'email',
-                            'placeholder' => esc(LANG['users']['attributes']['email']),
-                            'title' => esc(LANG['users']['attributes']['email']),
-                            'autocomplete' => 'off',
-                            'maxlength' => 255
+                            'placeholder' => LANG['users']['attributes']['email'],
+                            'title' => LANG['users']['attributes']['email'],
+                            'autocomplete' => 'off'
                         ]) ?>
                     </div>
 
                     <div class="input-wrapper">
-                        <label for="password">
-                            <?= esc(LANG['users']['attributes']['password']) ?>
-                        </label>
+                        <i class="fa-solid fa-key"></i>
                         <?= form_input([
                             'type' => 'password',
                             'name' => 'password',
                             'id' => 'password',
-                            'placeholder' => esc(LANG['users']['attributes']['password']),
-                            'title' => esc(LANG['users']['attributes']['password']),
-                            'autocomplete' => 'off',
-                            'maxlength' => 255
+                            'placeholder' => LANG['users']['attributes']['password'],
+                            'title' => LANG['users']['attributes']['password']
                         ]) ?>
                     </div>
 
-                    <button title="<?= esc(LANG['actions']['login']) ?>" class="btn btn-dark-grey btn-centered">
-                        <?= esc(LANG['actions']['login']) ?>
+
+
+                    <button title="<?= LANG['actions']['login'] ?>" class="btn btn-blue btn-centered">
+                        <?= LANG['actions']['login'] ?>
                     </button>
                 </form>
 
-                <div class="action-wrapper">
-                    <a href="javascript:void(0)" title="<?= esc(LANG['undefined']['new_here'] . LANG['actions']['register']) ?>">
-                        <?= esc(LANG['undefined']['new_here'] . LANG['actions']['register']) ?>
-                    </a>
+                <a href="javascript:void(0)" title="<?= LANG['undefined']['forgot_password'] ?>">
+                    <?= LANG['undefined']['forgot_password'] ?>
+                </a>
 
-                    <a href="javascript:void(0)" title="<?= esc(LANG['undefined']['forgot_password']) ?>">
-                        <?= esc(LANG['undefined']['forgot_password']) ?>
-                    </a>
-                </div>
+                <a href="javascript:void(0)" title="<?= LANG['undefined']['new_here'] . LANG['actions']['register'] ?>">
+                    <?= LANG['undefined']['new_here'] . LANG['actions']['register'] ?>
+                </a>
             </div>
         </main>
     </body>

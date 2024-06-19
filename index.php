@@ -91,7 +91,9 @@ $routeFound = router('dashboard', static function() {
     $pagesInstance->dashboard();
 }) || $routeFound;
 
-# Format related routes
+########################################################################################################################
+# Format related routs #################################################################################################
+########################################################################################################################
 $routeFound = router('formats', static function() {
     $formatsInstance = new Formats();
     $formatsInstance->index();
@@ -117,7 +119,9 @@ $routeFound = router('delete-format/:id', static function($id) {
     $formatsInstance->delete($id);
 }) || $routeFound;
 
-# Shelf related routes
+########################################################################################################################
+# Shelf related routs ##################################################################################################
+########################################################################################################################
 $routeFound = router('shelves', static function() {
     $shelvesInstance = new Shelves();
     $shelvesInstance->index();
@@ -143,7 +147,9 @@ $routeFound = router('delete-shelf/:id', static function($id) {
     $shelvesInstance->delete($id);
 }) || $routeFound;
 
-# User related routes
+########################################################################################################################
+# User related routs ###################################################################################################
+########################################################################################################################
 $routeFound = router('users', static function() {
     $usersInstance = new Users();
     $usersInstance->index();
@@ -169,7 +175,9 @@ $routeFound = router('delete-user/:id', static function($id) {
     $usersInstance->delete((int)$id);
 }) || $routeFound;
 
-# HTTP 404 route
+########################################################################################################################
+# Error related routs ##################################################################################################
+########################################################################################################################
 if (!$routeFound) {
     header("HTTP/1.0 404 Not Found");
     $pagesInstance = new Pages();

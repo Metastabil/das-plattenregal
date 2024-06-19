@@ -54,6 +54,6 @@ if (!function_exists('unset_message')) {
      * @return void
      */
     function unset_message() :void {
-        unset($_SESSION['messages']);
+        unset($_SESSION['message']);
     }
 }
