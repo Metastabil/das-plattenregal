@@ -21,13 +21,18 @@ body {
 
 body {
     font: 400 normal 18px 'Rubik', sans-serif;
+    background-color: var(--light-blue);
+    flex-direction: column;
+    display: flex;
+    padding: 10px;
 }
 
 header {
-    background-image: linear-gradient(to right, var(--dark-blue) 5%, var(--light-blue) 100%);
-    border-bottom: 2px solid var(--dark-blue);
+    box-shadow: 0 0 10px var(--dark-blue);
+    background-color: var(--white);
     justify-content: flex-start;
     align-items: center;
+    border-radius: 25px;
     padding: 10px;
     display: flex;
 }
@@ -101,8 +106,13 @@ nav .logout:hover:after {
 }
 
 main {
-    padding: 10px;
+    box-shadow: 0 0 10px var(--dark-blue);
+    background-color: var(--white);
+    border-radius: 25px;
+    margin: 25px 0 0 0;
+    padding: 15px;
     width: 100%;
+    flex: 1;
 }
 
 .title {

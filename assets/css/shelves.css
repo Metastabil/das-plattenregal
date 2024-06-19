@@ -3,13 +3,14 @@
 }
 
 .shelf-compartments-actions-wrapper a {
-    border: 1px solid var(--white);
-    color: var(--white);
+    border: 1px solid var(--black);
+    color: var(--black);
+    margin: 0 10px 0 0;
 }
 
 .shelf-compartments-actions-wrapper .active {
-    border-color: var(--light-blue);
-    color: var(--light-blue);
+    border-color: var(--dark-blue);
+    color: var(--dark-blue);
 }
 
 .shelf-compartments-container {
@@ -17,16 +18,13 @@
 }
 
 .graphics {
-    border-spacing: 10px;
-    margin: 0 0 0 -10px;
+    border-spacing: 15px;
+    margin: 0 0 0 -15px;
 }
 
 .graphics td {
-    transition: border-width .3s ease-in-out,
-    scale .3s ease-in-out,
-    box-shadow .3s ease-in-out;
-    border: 1px solid var(--light-blue);
-    color: var(--white);
+    transition: border-width .3s ease-in-out, scale .3s ease-in-out, box-shadow .3s ease-in-out;
+    border: 1px solid var(--dark-blue);
     text-align: center;
     border-radius: 5px;
     height: 150px;
@@ -34,7 +32,7 @@
 }
 
 .graphics td:hover {
-    box-shadow: 0 0 10px var(--light-blue);
+    box-shadow: 0 0 5px var(--light-blue);
     cursor: pointer;
     scale: 105%;
 }
