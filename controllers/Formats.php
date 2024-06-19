@@ -62,7 +62,7 @@ class Formats extends Controller {
                 set_message('success', esc(LANG['messages']['successfully_created']));
             }
             else {
-                set_message('error', esc(LANG['errors']['required_error']));
+                set_message('error', esc(LANG['errors']['error']));
             }
 
             redirect(base_url('formats'));
@@ -122,7 +122,7 @@ class Formats extends Controller {
                 set_message('success', esc(LANG['messages']['successfully_updated']));
             }
             else {
-                set_message('error', esc(LANG['errors']['required_error']));
+                set_message('error', esc(LANG['errors']['error']));
             }
 
             redirect(base_url('formats'));
@@ -138,6 +138,13 @@ class Formats extends Controller {
     }
 
     public function delete(int $id) :void {
+        if ($this->formatModel->delete($id)) {
+            set_message('success', LANG['messages']['successfully_deleted']);
+        }
+        else {
+            set_message('error', esc(LANG['errors']['error']));
+        }
 
+        redirect(base_url('formats'));
     }
 }

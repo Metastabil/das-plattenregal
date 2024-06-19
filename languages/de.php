@@ -96,6 +96,7 @@ $lang['messages']['successfully_created'] = 'Der Eintrag wurde erfolgreich angel
 $lang['messages']['successfully_updated'] = 'Der Eintrag wurde erfolgreich aktualisiert.';
 $lang['messages']['successfully_activated'] = 'Der Benutzer wurde erfolgreich aktiviert.';
 $lang['messages']['successfully_deactivated'] = 'Der Benutzer wurde erfolgreich deaktiviert.';
+$lang['messages']['successfully_deleted'] = 'Der Eintrag wurde erfolgreich gelöscht.';
 
 ########################################################################################################################
 # Confirmations ########################################################################################################
