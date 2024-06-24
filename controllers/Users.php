@@ -2,6 +2,7 @@
 namespace KPO\Controllers;
 
 use JetBrains\PhpStorm\NoReturn;
+use KPO\Models\ShelfModel;
 use KPO\Models\UserModel;
 
 /**
@@ -11,6 +12,7 @@ use KPO\Models\UserModel;
 
 class Users extends Controller {
     private UserModel $userModel;
+    private ShelfModel $shelfModel;
 
     public function __construct() {
         parent::__construct();
@@ -22,7 +24,7 @@ class Users extends Controller {
      */
     public function index() :void {
         $data = [
-            'title' => esc(LANG['titles']['users']['index']),
+            'title' => LANG['titles']['users']['index'],
             'elements' => $this->userModel->get(0, '', true)
         ];
 
@@ -36,9 +38,7 @@ class Users extends Controller {
      */
     public function create() :void {
         $data = [
-            'title' => esc(LANG['titles']['users']['create']),
-            'error' => '',
-            'message' => ''
+            'title' => LANG['titles']['users']['create']
         ];
 
         $required = [
@@ -62,16 +62,16 @@ class Users extends Controller {
             ];
 
             if ($this->userModel->create($form_data)) {
-                $data['message'] = esc(LANG['messages']['successfully_created']);
+                set_message('success', LANG['messages']['successfully_created']);
             }
             else {
-                $data['error'] = esc(LANG['errors']['error']);
+                set_message('error', LANG['errors']['error']);
             }
 
             redirect(base_url('users'));
         }
         else {
-            $data['error'] = esc(LANG['errors']['required_error']);
+            set_message('error', LANG['errors']['required_error']);
         }
 
         $this->view->render('templates/header', $data)
@@ -82,12 +82,12 @@ class Users extends Controller {
     /**
      * @param int $id
      * @return void
-     * @todo Also display all shelves a user has created
      */
     public function show(int $id) :void {
         $data = [
-            'title' => esc(LANG['titles']['users']['show']),
-            'element' => $this->userModel->get($id, '', true)
+            'title' => LANG['titles']['users']['show'],
+            'element' => $this->userModel->get($id, '', true),
+            'shelves' => $this->shelfModel->get(0, $id)
         ];
 
         $this->view->render('templates/header', $data)
@@ -97,7 +97,7 @@ class Users extends Controller {
 
     public function edit(int $id) :void {
         $data = [
-            'title' => esc(LANG['titles']['users']['update']),
+            'title' => LANG['titles']['users']['update'],
             'element' => $this->userModel->get($id, '', true)
         ];
 
@@ -137,35 +137,32 @@ class Users extends Controller {
         }
 
         $this->view->render('templates/header', $data)
-            ->render('users/create', $data)
-            ->render('templates/footer');
+                   ->render('users/create', $data)
+                   ->render('templates/footer');
     }
 
     /**
      * @param int $id
      * @return void
      */
-    public function change_status(int $id) :void {
+    #[NoReturn] public function change_status(int $id) :void {
         $user = $this->userModel->get($id, '', true);
 
-        switch ((bool)$user['active']) {
-            case true:
-                if ($this->userModel->update($id, ['active' => 0])) {
-                    set_message('success', esc(LANG['messages']['successfully_deactivated']));
-                }
-                else {
-                    set_message('error', esc(LANG['errors']['error']));
-                }
-
-                break;
-            case false:
-                if ($this->userModel->update($id, ['active' => 1])) {
-                    set_message('success', esc(LANG['messages']['successfully_activated']));
-                }
-                else {
-                    set_message('error', esc(LANG['errors']['error']));
-                }
-                break;
+        if ($user['active']) {
+            if ($this->userModel->update($id, ['active' => 0])) {
+                set_message('success', esc(LANG['messages']['successfully_deactivated']));
+            }
+            else {
+                set_message('error', esc(LANG['errors']['error']));
+            }
+        }
+        else {
+            if ($this->userModel->update($id, ['active' => 1])) {
+                set_message('success', esc(LANG['messages']['successfully_activated']));
+            }
+            else {
+                set_message('error', esc(LANG['errors']['error']));
+            }
         }
 
         redirect(base_url('users'));

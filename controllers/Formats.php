@@ -1,6 +1,7 @@
 <?php
 namespace KPO\Controllers;
 
+use JetBrains\PhpStorm\NoReturn;
 use KPO\Models\FormatModel;
 
 /**
@@ -25,7 +26,7 @@ class Formats extends Controller {
      */
     public function index() :void {
         $data = [
-            'title' => esc(LANG['titles']['formats']['index']),
+            'title' => LANG['titles']['formats']['index'],
             'elements' => $this->formatModel->get()
         ];
 
@@ -39,7 +40,7 @@ class Formats extends Controller {
      */
     public function create() :void {
         $data = [
-            'title' => esc(LANG['titles']['formats']['create'])
+            'title' => LANG['titles']['formats']['create']
         ];
 
         $required = ['name'];
@@ -59,17 +60,17 @@ class Formats extends Controller {
             ];
 
             if ($this->formatModel->create($form_data)) {
-                set_message('success', esc(LANG['messages']['successfully_created']));
+                set_message('success', LANG['messages']['successfully_created']);
             }
             else {
-                set_message('error', esc(LANG['errors']['error']));
+                set_message('error', LANG['errors']['error']);
             }
 
             redirect(base_url('formats'));
 
         }
         else {
-            set_message('error', esc(LANG['errors']['required_error']));
+            set_message('error', LANG['errors']['required_error']);
         }
 
         $this->view->render('templates/header', $data)
@@ -83,7 +84,7 @@ class Formats extends Controller {
      */
     public function show(int $id) :void {
         $data = [
-            'title' => esc(LANG['titles']['formats']['show']),
+            'title' => LANG['titles']['formats']['show'],
             'element' => $this->formatModel->get($id)
         ];
 
@@ -98,7 +99,7 @@ class Formats extends Controller {
      */
     public function edit(int $id) :void {
         $data = [
-            'title' => esc(LANG['titles']['formats']['create']),
+            'title' => LANG['titles']['formats']['create'],
             'element' => $this->formatModel->get($id)
         ];
 
@@ -119,17 +120,17 @@ class Formats extends Controller {
             ];
 
             if ($this->formatModel->update($id, $form_data)) {
-                set_message('success', esc(LANG['messages']['successfully_updated']));
+                set_message('success', LANG['messages']['successfully_updated']);
             }
             else {
-                set_message('error', esc(LANG['errors']['error']));
+                set_message('error', LANG['errors']['error']);
             }
 
             redirect(base_url('formats'));
 
         }
         else {
-            set_message('error', esc(LANG['errors']['required_error']));
+            set_message('error', LANG['errors']['required_error']);
         }
 
         $this->view->render('templates/header', $data)
@@ -137,12 +138,16 @@ class Formats extends Controller {
                    ->render('templates/footer');
     }
 
-    public function delete(int $id) :void {
+    /**
+     * @param int $id
+     * @return void
+     */
+    #[NoReturn] public function delete(int $id) :void {
         if ($this->formatModel->delete($id)) {
             set_message('success', LANG['messages']['successfully_deleted']);
         }
         else {
-            set_message('error', esc(LANG['errors']['error']));
+            set_message('error', LANG['errors']['error']);
         }
 
         redirect(base_url('formats'));

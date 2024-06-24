@@ -29,7 +29,7 @@ class Shelves extends Controller {
      */
     public function index() :void {
         $data = [
-            'title' => esc(LANG['titles']['shelves']['index']),
+            'title' => LANG['titles']['shelves']['index'],
             'elements' => $this->shelfModel->get(0, $this->user_id)
         ];
 
@@ -40,7 +40,7 @@ class Shelves extends Controller {
 
     public function create() :void {
         $data = [
-            'title' => esc(LANG['titles']['shelves']['create'])
+            'title' => LANG['titles']['shelves']['create']
         ];
 
         $required = [
@@ -115,7 +115,7 @@ class Shelves extends Controller {
      */
     public function show(int $id) :void {
         $data = [
-            'title' => esc(LANG['titles']['shelves']['show']),
+            'title' => LANG['titles']['shelves']['show'],
             'element' => $this->shelfModel->get($id),
             'shelf_compartments' => $this->shelfCompartmentModel->get(0, 0, $id)
         ];
@@ -126,10 +126,10 @@ class Shelves extends Controller {
     }
 
     public function edit(int $id) :void {
-
+        # TODO
     }
 
     public function delete(int $id) :void {
-
+        # TODO
     }
 }

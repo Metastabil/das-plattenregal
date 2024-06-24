@@ -2,6 +2,7 @@
 namespace KPO\Controllers;
 
 use JetBrains\PhpStorm\NoReturn;
+use KPO\Models\ShelfModel;
 use KPO\Models\UserModel;
 
 /**
@@ -11,6 +12,7 @@ use KPO\Models\UserModel;
 
 class Pages extends Controller {
     private UserModel $userModel;
+    private ShelfModel $shelfModel;
 
     public function __construct() {
         parent::__construct();
@@ -22,7 +24,7 @@ class Pages extends Controller {
      */
     public function login() :void {
         $data = [
-            'title' => esc(LANG['titles']['pages']['login'])
+            'title' => LANG['titles']['pages']['login']
         ];
 
         $required = ['email', 'password'];
@@ -48,11 +50,11 @@ class Pages extends Controller {
                 redirect('dashboard');
             }
             else {
-                set_message('error',  esc(LANG['errors']['unknown_credentials']));
+                set_message('error', LANG['errors']['unknown_credentials']);
             }
         }
         else {
-            set_message('error', esc(LANG['errors']['required_error']));
+            set_message('error', LANG['errors']['required_error']);
         }
 
         $this->view->render('pages/login', $data);
@@ -68,11 +70,16 @@ class Pages extends Controller {
         redirect(base_url('login'));
     }
 
+    /**
+     * @return void
+     */
     public function dashboard() :void {
         redirect_if_not_authenticated();
+        $user_id = $_SESSION['user']['id'];
 
         $data = [
-            'title' => esc(LANG['titles']['pages']['dashboard'])
+            'title' => LANG['titles']['pages']['dashboard'],
+            'shelves' => $this->shelfModel->get(0, $user_id)
         ];
 
         $this->view->render('templates/header', $data)
@@ -85,7 +92,7 @@ class Pages extends Controller {
      */
     public function error_404() :void {
         $data = [
-            'title' => esc(LANG['titles']['pages']['error_404'])
+            'title' => LANG['titles']['pages']['error_404']
         ];
 
         $this->view->render('pages/error_404', $data);
